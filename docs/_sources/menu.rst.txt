@@ -1,0 +1,5 @@
+Менеджер меню состояний
+====================================
+
+.. autoclass:: src.menu.base_menu.BaseMenu
+   :members:

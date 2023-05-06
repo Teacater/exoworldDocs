@@ -1,0 +1,5 @@
+Модель состояния
+====================================
+
+.. autoclass:: src.menu.base_model.BaseModel
+   :members:
