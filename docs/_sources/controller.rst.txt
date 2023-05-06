@@ -1,0 +1,5 @@
+Контроллер состояния
+====================================
+
+.. autoclass:: src.menu.base_controller.BaseController
+   :members:

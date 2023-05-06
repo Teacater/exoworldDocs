@@ -1,0 +1,20 @@
+Документация разработчика Exoworld
+====================================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   menu
+   controller
+   model
+   view
+   game
+   example
+
+
+
+Индекс
+==================
+
+* :ref:`genindex`
