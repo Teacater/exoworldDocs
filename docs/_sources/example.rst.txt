@@ -1,0 +1,8 @@
+Пример реализации состояния
+====================================
+
+.. autoclass:: src.states.settings_state.controller.SettingsController
+   :members:
+
+.. autoclass:: src.states.settings_state.model.Model
+   :members:
