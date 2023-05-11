@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Алфавитный указатель" href="genindex.html" /><link rel="search" title="Поиск" href="search.html" /><link rel="next" title="Меню состояний" href="menu.html" />
+<link rel="index" title="Алфавитный указатель" href="genindex.html" /><link rel="search" title="Поиск" href="search.html" /><link rel="next" title="Реализация лутбокса" href="lootbox.html" /><link rel="prev" title="Пример реализации состояния" href="example.html" />
 
     <!-- Generated with Sphinx 6.2.1 and Furo 2023.03.27 -->
-        <title>документация Exoworld v0.5</title>
+        <title>Реализация барраков - документация Exoworld v0.5</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="#"><div class="brand">документация Exoworld v0.5</div></a>
+      <a href="index.html"><div class="brand">документация Exoworld v0.5</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -134,7 +134,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -143,7 +143,7 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="#">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
   <span class="sidebar-brand-text">документация Exoworld v0.5</span>
@@ -155,14 +155,14 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="menu.html">Меню состояний</a></li>
-<li class="toctree-l1"><a class="reference internal" href="controller.html">Контроллер</a></li>
-<li class="toctree-l1"><a class="reference internal" href="model.html">Модель</a></li>
-<li class="toctree-l1"><a class="reference internal" href="view.html">Визуализация</a></li>
-<li class="toctree-l1"><a class="reference internal" href="game.html">Сессионная игра</a></li>
-<li class="toctree-l1"><a class="reference internal" href="example.html">Пример состояния</a></li>
-<li class="toctree-l1"><a class="reference internal" href="barracks.html">Реализация барраков</a></li>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="menu.html">Менеджер меню состояний</a></li>
+<li class="toctree-l1"><a class="reference internal" href="controller.html">Контроллер состояния</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model.html">Модель состояния</a></li>
+<li class="toctree-l1"><a class="reference internal" href="view.html">Визуализация состояний</a></li>
+<li class="toctree-l1"><a class="reference internal" href="game.html">Архитекутура сессионной игры</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example.html">Пример реализации состояния</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Реализация барраков</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lootbox.html">Реализация лутбокса</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mini_game.html">Основа мини-игр</a></li>
 <li class="toctree-l1"><a class="reference internal" href="shop.html">Реализация магазина</a></li>
@@ -194,74 +194,60 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <section id="exoworld">
-<h1>Документация разработчика Exoworld<a class="headerlink" href="#exoworld" title="Permalink to this heading">#</a></h1>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="menu.html">Меню состояний</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="menu.html#src.menu.base_menu.BaseMenu"><code class="docutils literal notranslate"><span class="pre">BaseMenu</span></code></a></li>
+          <section id="id1">
+<h1>Реализация барраков<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="src.states.barracks_state.controller.BarracksController">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.states.barracks_state.controller.</span></span><span class="sig-name descname"><span class="pre">BarracksController</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">view</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="view.html#src.menu.view.View" title="src.menu.view.View"><span class="pre">View</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">change_state</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.states.barracks_state.controller.BarracksController" title="Ссылка на это определение">#</a></dt>
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="src.states.barracks_state.controller.BarracksController.model_class">
+<span class="sig-name descname"><span class="pre">model_class</span></span><a class="headerlink" href="#src.states.barracks_state.controller.BarracksController.model_class" title="Ссылка на это определение">#</a></dt>
+<dd><p>alias of <a class="reference internal" href="#src.states.barracks_state.model.Model" title="src.states.barracks_state.model.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.states.barracks_state.controller.BarracksController.process_callback">
+<span class="sig-name descname"><span class="pre">process_callback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tg_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">button_index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#src.states.barracks_state.controller.BarracksController.process_callback" title="Ссылка на это определение">#</a></dt>
+<dd><p>Метод process_callback(self, tg_id: int, button_index: int)
+обрабатывает нажатие игроком на кнопку из меню настроек.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tg_id</strong> – идентификатор игрока</p></li>
+<li><p><strong>button_index</strong> – индекс нажатой кнопки</p></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="controller.html">Контроллер</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="controller.html#src.menu.base_controller.BaseController"><code class="docutils literal notranslate"><span class="pre">BaseController</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="model.html">Модель</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="model.html#src.menu.base_model.BaseModel"><code class="docutils literal notranslate"><span class="pre">BaseModel</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="view.html">Визуализация</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="view.html#src.menu.view.View"><code class="docutils literal notranslate"><span class="pre">View</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="game.html">Сессионная игра</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="game.html#src.game.game.Game"><code class="docutils literal notranslate"><span class="pre">Game</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="game.html#src.game.map.Map"><code class="docutils literal notranslate"><span class="pre">Map</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="game.html#src.game.player.Player"><code class="docutils literal notranslate"><span class="pre">Player</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="game.html#src.game.tile.Tile"><code class="docutils literal notranslate"><span class="pre">Tile</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="game.html#src.game.queue.Queue"><code class="docutils literal notranslate"><span class="pre">Queue</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="example.html">Пример состояния</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="example.html#src.states.settings_state.controller.SettingsController"><code class="docutils literal notranslate"><span class="pre">SettingsController</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="example.html#src.states.settings_state.model.Model"><code class="docutils literal notranslate"><span class="pre">Model</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="barracks.html">Реализация барраков</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="barracks.html#src.states.barracks_state.controller.BarracksController"><code class="docutils literal notranslate"><span class="pre">BarracksController</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="barracks.html#src.states.barracks_state.model.Model"><code class="docutils literal notranslate"><span class="pre">Model</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="lootbox.html">Реализация лутбокса</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="lootbox.html#src.states.lootbox_state.controller.LootboxController"><code class="docutils literal notranslate"><span class="pre">LootboxController</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="lootbox.html#src.states.lootbox_state.model.Model"><code class="docutils literal notranslate"><span class="pre">Model</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="mini_game.html">Основа мини-игр</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="mini_game.html#src.states.mini_game_state.controller.MiniGameController"><code class="docutils literal notranslate"><span class="pre">MiniGameController</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="mini_game.html#src.states.mini_game_state.model.Model"><code class="docutils literal notranslate"><span class="pre">Model</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="shop.html">Реализация магазина</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="shop.html#src.states.shop_state.controller.ShopController"><code class="docutils literal notranslate"><span class="pre">ShopController</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="shop.html#src.states.shop_state.model.Model"><code class="docutils literal notranslate"><span class="pre">Model</span></code></a></li>
-</ul>
-</li>
-</ul>
-</div>
-</section>
-<section id="id1">
-<h1>Индекс<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
-<ul class="simple">
-<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Алфавитный указатель</span></a></p></li>
-</ul>
+</dd>
+<dt class="field-even">Результат<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="src.states.barracks_state.model.Model">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.states.barracks_state.model.</span></span><span class="sig-name descname"><span class="pre">Model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">User</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.states.barracks_state.model.Model" title="Ссылка на это определение">#</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="src.states.barracks_state.model.Model.get_button">
+<span class="sig-name descname"><span class="pre">get_button</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">button_index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.states.barracks_state.model.Model.get_button" title="Ссылка на это определение">#</a></dt>
+<dd><p>Возвращает кнопку по индексу</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>button_index</strong> – номер кнопки</p>
+</dd>
+</dl>
+<p>:return button enum</p>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 
         </article>
@@ -269,16 +255,26 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="menu.html">
+          <a class="next-page" href="lootbox.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Меню состояний</div>
+                <div class="title">Реализация лутбокса</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          
+          <a class="prev-page" href="example.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Пример реализации состояния</div>
+                
+              </div>
+            </a>
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -297,8 +293,35 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Реализация барраков</a><ul>
+<li><a class="reference internal" href="#src.states.barracks_state.controller.BarracksController"><code class="docutils literal notranslate"><span class="pre">BarracksController</span></code></a><ul>
+<li><a class="reference internal" href="#src.states.barracks_state.controller.BarracksController.model_class"><code class="docutils literal notranslate"><span class="pre">BarracksController.model_class</span></code></a></li>
+<li><a class="reference internal" href="#src.states.barracks_state.controller.BarracksController.process_callback"><code class="docutils literal notranslate"><span class="pre">BarracksController.process_callback()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#src.states.barracks_state.model.Model"><code class="docutils literal notranslate"><span class="pre">Model</span></code></a><ul>
+<li><a class="reference internal" href="#src.states.barracks_state.model.Model.get_button"><code class="docutils literal notranslate"><span class="pre">Model.get_button()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

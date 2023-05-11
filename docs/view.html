@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Алфавитный указатель" href="genindex.html" /><link rel="search" title="Поиск" href="search.html" /><link rel="next" title="Архитекутура сессионной игры" href="game.html" /><link rel="prev" title="Модель состояния" href="model.html" />
+<link rel="index" title="Алфавитный указатель" href="genindex.html" /><link rel="search" title="Поиск" href="search.html" /><link rel="next" title="Сессионная игра" href="game.html" /><link rel="prev" title="Модель" href="model.html" />
 
     <!-- Generated with Sphinx 6.2.1 and Furo 2023.03.27 -->
-        <title>Визуализация состояний - документация Exoworld v0.5</title>
+        <title>Визуализация - документация Exoworld v0.5</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -156,12 +156,16 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="menu.html">Менеджер меню состояний</a></li>
-<li class="toctree-l1"><a class="reference internal" href="controller.html">Контроллер состояния</a></li>
-<li class="toctree-l1"><a class="reference internal" href="model.html">Модель состояния</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Визуализация состояний</a></li>
-<li class="toctree-l1"><a class="reference internal" href="game.html">Архитекутура сессионной игры</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu.html">Меню состояний</a></li>
+<li class="toctree-l1"><a class="reference internal" href="controller.html">Контроллер</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model.html">Модель</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Визуализация</a></li>
+<li class="toctree-l1"><a class="reference internal" href="game.html">Сессионная игра</a></li>
 <li class="toctree-l1"><a class="reference internal" href="example.html">Пример состояния</a></li>
+<li class="toctree-l1"><a class="reference internal" href="barracks.html">Реализация барраков</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lootbox.html">Реализация лутбокса</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mini_game.html">Основа мини-игр</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shop.html">Реализация магазина</a></li>
 </ul>
 
 </div>
@@ -197,7 +201,7 @@
         </div>
         <article role="main">
           <section id="id1">
-<h1>Визуализация состояний<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<h1>Визуализация<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="src.menu.view.View">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.menu.view.</span></span><span class="sig-name descname"><span class="pre">View</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dispatcher</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dispatcher</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">process_callback</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.menu.view.View" title="Ссылка на это определение">#</a></dt>
@@ -292,7 +296,7 @@
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Архитекутура сессионной игры</div>
+                <div class="title">Сессионная игра</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -303,7 +307,7 @@
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Модель состояния</div>
+                <div class="title">Модель</div>
                 
               </div>
             </a>
@@ -337,7 +341,7 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Визуализация состояний</a><ul>
+<li><a class="reference internal" href="#">Визуализация</a><ul>
 <li><a class="reference internal" href="#src.menu.view.View"><code class="docutils literal notranslate"><span class="pre">View</span></code></a><ul>
 <li><a class="reference internal" href="#src.menu.view.View.answer"><code class="docutils literal notranslate"><span class="pre">View.answer()</span></code></a></li>
 <li><a class="reference internal" href="#src.menu.view.View.generate_markup"><code class="docutils literal notranslate"><span class="pre">View.generate_markup()</span></code></a></li>

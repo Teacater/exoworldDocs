@@ -1,0 +1,8 @@
+Реализация барраков
+====================================
+
+.. autoclass:: src.states.barracks_state.controller.BarracksController
+   :members:
+
+.. autoclass:: src.states.barracks_state.model.Model
+   :members:

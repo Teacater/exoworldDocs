@@ -1,0 +1,8 @@
+Основа мини-игр
+====================================
+
+.. autoclass:: src.states.mini_game_state.controller.MiniGameController
+   :members:
+
+.. autoclass:: src.states.mini_game_state.model.Model
+   :members:

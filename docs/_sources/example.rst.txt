@@ -1,4 +1,4 @@
-Пример реализации состояния
+Пример состояния
 ====================================
 
 .. autoclass:: src.states.settings_state.controller.SettingsController

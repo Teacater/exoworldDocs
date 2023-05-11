@@ -1,0 +1,8 @@
+Реализация магазина
+====================================
+
+.. autoclass:: src.states.shop_state.controller.ShopController
+   :members:
+
+.. autoclass:: src.states.shop_state.model.Model
+   :members:

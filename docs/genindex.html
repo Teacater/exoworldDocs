@@ -154,12 +154,16 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="menu.html">Менеджер меню состояний</a></li>
-<li class="toctree-l1"><a class="reference internal" href="controller.html">Контроллер состояния</a></li>
-<li class="toctree-l1"><a class="reference internal" href="model.html">Модель состояния</a></li>
-<li class="toctree-l1"><a class="reference internal" href="view.html">Визуализация состояний</a></li>
-<li class="toctree-l1"><a class="reference internal" href="game.html">Архитекутура сессионной игры</a></li>
-<li class="toctree-l1"><a class="reference internal" href="example.html">Пример реализации состояния</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu.html">Меню состояний</a></li>
+<li class="toctree-l1"><a class="reference internal" href="controller.html">Контроллер</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model.html">Модель</a></li>
+<li class="toctree-l1"><a class="reference internal" href="view.html">Визуализация</a></li>
+<li class="toctree-l1"><a class="reference internal" href="game.html">Сессионная игра</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example.html">Пример состояния</a></li>
+<li class="toctree-l1"><a class="reference internal" href="barracks.html">Реализация барраков</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lootbox.html">Реализация лутбокса</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mini_game.html">Основа мини-игр</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shop.html">Реализация магазина</a></li>
 </ul>
 
 </div>
@@ -196,7 +200,7 @@
           
 <section class="genindex-section">
   <h1 id="index">Алфавитный указатель</h1>
-  <div class="genindex-jumpbox"><a href="#A"><strong>A</strong></a> | <a href="#B"><strong>B</strong></a> | <a href="#C"><strong>C</strong></a> | <a href="#G"><strong>G</strong></a> | <a href="#M"><strong>M</strong></a> | <a href="#P"><strong>P</strong></a> | <a href="#Q"><strong>Q</strong></a> | <a href="#R"><strong>R</strong></a> | <a href="#S"><strong>S</strong></a> | <a href="#T"><strong>T</strong></a> | <a href="#U"><strong>U</strong></a> | <a href="#V"><strong>V</strong></a></div>
+  <div class="genindex-jumpbox"><a href="#A"><strong>A</strong></a> | <a href="#B"><strong>B</strong></a> | <a href="#C"><strong>C</strong></a> | <a href="#G"><strong>G</strong></a> | <a href="#I"><strong>I</strong></a> | <a href="#L"><strong>L</strong></a> | <a href="#M"><strong>M</strong></a> | <a href="#P"><strong>P</strong></a> | <a href="#Q"><strong>Q</strong></a> | <a href="#R"><strong>R</strong></a> | <a href="#S"><strong>S</strong></a> | <a href="#T"><strong>T</strong></a> | <a href="#U"><strong>U</strong></a> | <a href="#V"><strong>V</strong></a></div>
 </section>
 <section id="A" class="genindex-section">
   <h2>A</h2>
@@ -216,6 +220,8 @@
   <h2>B</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="barracks.html#src.states.barracks_state.controller.BarracksController">BarracksController (класс в src.states.barracks_state.controller)</a>
+</li>
         <li><a href="controller.html#src.menu.base_controller.BaseController">BaseController (класс в src.menu.base_controller)</a>
 </li>
     </ul></td>
@@ -249,7 +255,15 @@
         <li><a href="model.html#src.menu.base_model.BaseModel.get_button">get_button() (метод src.menu.base_model.BaseModel)</a>
 
         <ul>
+          <li><a href="barracks.html#src.states.barracks_state.model.Model.get_button">(метод src.states.barracks_state.model.Model)</a>
+</li>
+          <li><a href="lootbox.html#src.states.lootbox_state.model.Model.get_button">(метод src.states.lootbox_state.model.Model)</a>
+</li>
+          <li><a href="mini_game.html#src.states.mini_game_state.model.Model.get_button">(метод src.states.mini_game_state.model.Model)</a>
+</li>
           <li><a href="example.html#src.states.settings_state.model.Model.get_button">(метод src.states.settings_state.model.Model)</a>
+</li>
+          <li><a href="shop.html#src.states.shop_state.model.Model.get_button">(метод src.states.shop_state.model.Model)</a>
 </li>
         </ul></li>
     </ul></td>
@@ -262,18 +276,60 @@
   </tr></table>
 </section>
 
+<section id="I" class="genindex-section">
+  <h2>I</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="shop.html#src.states.shop_state.model.Model.init_menu">init_menu() (метод src.states.shop_state.model.Model)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="L" class="genindex-section">
+  <h2>L</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="lootbox.html#src.states.lootbox_state.controller.LootboxController">LootboxController (класс в src.states.lootbox_state.controller)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
 <section id="M" class="genindex-section">
   <h2>M</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="game.html#src.game.map.Map">Map (класс в src.game.map)</a>
 </li>
+        <li><a href="mini_game.html#src.states.mini_game_state.controller.MiniGameController">MiniGameController (класс в src.states.mini_game_state.controller)</a>
+</li>
+        <li><a href="barracks.html#src.states.barracks_state.model.Model">Model (класс в src.states.barracks_state.model)</a>
+
+        <ul>
+          <li><a href="lootbox.html#src.states.lootbox_state.model.Model">(класс в src.states.lootbox_state.model)</a>
+</li>
+          <li><a href="mini_game.html#src.states.mini_game_state.model.Model">(класс в src.states.mini_game_state.model)</a>
+</li>
+          <li><a href="example.html#src.states.settings_state.model.Model">(класс в src.states.settings_state.model)</a>
+</li>
+          <li><a href="shop.html#src.states.shop_state.model.Model">(класс в src.states.shop_state.model)</a>
+</li>
+        </ul></li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="example.html#src.states.settings_state.model.Model">Model (класс в src.states.settings_state.model)</a>
+        <li><a href="barracks.html#src.states.barracks_state.controller.BarracksController.model_class">model_class (атрибут src.states.barracks_state.controller.BarracksController)</a>
+
+        <ul>
+          <li><a href="lootbox.html#src.states.lootbox_state.controller.LootboxController.model_class">(атрибут src.states.lootbox_state.controller.LootboxController)</a>
 </li>
-        <li><a href="example.html#src.states.settings_state.controller.SettingsController.model_class">model_class (атрибут src.states.settings_state.controller.SettingsController)</a>
+          <li><a href="mini_game.html#src.states.mini_game_state.controller.MiniGameController.model_class">(атрибут src.states.mini_game_state.controller.MiniGameController)</a>
 </li>
+          <li><a href="example.html#src.states.settings_state.controller.SettingsController.model_class">(атрибут src.states.settings_state.controller.SettingsController)</a>
+</li>
+          <li><a href="shop.html#src.states.shop_state.controller.ShopController.model_class">(атрибут src.states.shop_state.controller.ShopController)</a>
+</li>
+        </ul></li>
     </ul></td>
   </tr></table>
 </section>
@@ -295,7 +351,15 @@
         <ul>
           <li><a href="menu.html#src.menu.base_menu.BaseMenu.process_callback">(метод src.menu.base_menu.BaseMenu)</a>
 </li>
+          <li><a href="barracks.html#src.states.barracks_state.controller.BarracksController.process_callback">(метод src.states.barracks_state.controller.BarracksController)</a>
+</li>
+          <li><a href="lootbox.html#src.states.lootbox_state.controller.LootboxController.process_callback">(метод src.states.lootbox_state.controller.LootboxController)</a>
+</li>
+          <li><a href="mini_game.html#src.states.mini_game_state.controller.MiniGameController.process_callback">(метод src.states.mini_game_state.controller.MiniGameController)</a>
+</li>
           <li><a href="example.html#src.states.settings_state.controller.SettingsController.process_callback">(метод src.states.settings_state.controller.SettingsController)</a>
+</li>
+          <li><a href="shop.html#src.states.shop_state.controller.ShopController.process_callback">(метод src.states.shop_state.controller.ShopController)</a>
 </li>
         </ul></li>
     </ul></td>
@@ -349,6 +413,8 @@
         <li><a href="menu.html#src.menu.base_menu.BaseMenu.set_start_state">set_start_state() (метод src.menu.base_menu.BaseMenu)</a>
 </li>
         <li><a href="example.html#src.states.settings_state.controller.SettingsController">SettingsController (класс в src.states.settings_state.controller)</a>
+</li>
+        <li><a href="shop.html#src.states.shop_state.controller.ShopController">ShopController (класс в src.states.shop_state.controller)</a>
 </li>
         <li><a href="controller.html#src.menu.base_controller.BaseController.show">show() (метод src.menu.base_controller.BaseController)</a>
 

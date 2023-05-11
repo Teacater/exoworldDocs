@@ -1,0 +1,8 @@
+Реализация лутбокса
+====================================
+
+.. autoclass:: src.states.lootbox_state.controller.LootboxController
+   :members:
+
+.. autoclass:: src.states.lootbox_state.model.Model
+   :members:

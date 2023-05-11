@@ -11,10 +11,14 @@
    view
    game
    example
+   barracks
+   lootbox
+   mini_game
+   shop
 
 
 
 Индекс
-==================
+====================================
 
 * :ref:`genindex`

@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Алфавитный указатель" href="genindex.html" /><link rel="search" title="Поиск" href="search.html" /><link rel="next" title="Визуализация" href="view.html" /><link rel="prev" title="Контроллер" href="controller.html" />
+<link rel="index" title="Алфавитный указатель" href="genindex.html" /><link rel="search" title="Поиск" href="search.html" /><link rel="next" title="Основа мини-игр" href="mini_game.html" /><link rel="prev" title="Реализация барраков" href="barracks.html" />
 
     <!-- Generated with Sphinx 6.2.1 and Furo 2023.03.27 -->
-        <title>Модель - документация Exoworld v0.5</title>
+        <title>Реализация лутбокса - документация Exoworld v0.5</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -156,14 +156,14 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="menu.html">Меню состояний</a></li>
-<li class="toctree-l1"><a class="reference internal" href="controller.html">Контроллер</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Модель</a></li>
-<li class="toctree-l1"><a class="reference internal" href="view.html">Визуализация</a></li>
-<li class="toctree-l1"><a class="reference internal" href="game.html">Сессионная игра</a></li>
-<li class="toctree-l1"><a class="reference internal" href="example.html">Пример состояния</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu.html">Менеджер меню состояний</a></li>
+<li class="toctree-l1"><a class="reference internal" href="controller.html">Контроллер состояния</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model.html">Модель состояния</a></li>
+<li class="toctree-l1"><a class="reference internal" href="view.html">Визуализация состояний</a></li>
+<li class="toctree-l1"><a class="reference internal" href="game.html">Архитекутура сессионной игры</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example.html">Пример реализации состояния</a></li>
 <li class="toctree-l1"><a class="reference internal" href="barracks.html">Реализация барраков</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lootbox.html">Реализация лутбокса</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Реализация лутбокса</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mini_game.html">Основа мини-игр</a></li>
 <li class="toctree-l1"><a class="reference internal" href="shop.html">Реализация магазина</a></li>
 </ul>
@@ -201,22 +201,45 @@
         </div>
         <article role="main">
           <section id="id1">
-<h1>Модель<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<h1>Реализация лутбокса<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <dl class="py class">
-<dt class="sig sig-object py" id="src.menu.base_model.BaseModel">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.menu.base_model.</span></span><span class="sig-name descname"><span class="pre">BaseModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">User</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.menu.base_model.BaseModel" title="Ссылка на это определение">#</a></dt>
-<dd><p>Основной класс для создания новых моделей, хранит логику каждого состояния и реализует её</p>
+<dt class="sig sig-object py" id="src.states.lootbox_state.controller.LootboxController">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.states.lootbox_state.controller.</span></span><span class="sig-name descname"><span class="pre">LootboxController</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">view</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="view.html#src.menu.view.View" title="src.menu.view.View"><span class="pre">View</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">change_state</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">from_state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">State</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">State.START</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lootbox</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Lootbox</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.states.lootbox_state.controller.LootboxController" title="Ссылка на это определение">#</a></dt>
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="src.states.lootbox_state.controller.LootboxController.model_class">
+<span class="sig-name descname"><span class="pre">model_class</span></span><a class="headerlink" href="#src.states.lootbox_state.controller.LootboxController.model_class" title="Ссылка на это определение">#</a></dt>
+<dd><p>alias of <a class="reference internal" href="#src.states.lootbox_state.model.Model" title="src.states.lootbox_state.model.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.states.lootbox_state.controller.LootboxController.process_callback">
+<span class="sig-name descname"><span class="pre">process_callback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tg_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">button_index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#src.states.lootbox_state.controller.LootboxController.process_callback" title="Ссылка на это определение">#</a></dt>
+<dd><p>Метод process_callback предназначен для обработки нажатий на к
+нопки на экране лутбокса и обработки нажатий на инлайн-клавиатуру.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Параметры<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>user</strong> – пользователь из базы данных</p></li>
-<li><p><strong>message_id</strong> – айди сообщения в котором происходит действие</p></li>
+<li><p><strong>tg_id</strong> – целочисленное значение, идентифицирующее текущего пользователя.</p></li>
+<li><p><strong>button_index</strong> – целочисленное значение, представляющее индекс нажатой кнопки.</p></li>
 </ul>
 </dd>
+<dt class="field-even">Результат<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
 </dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="src.menu.base_model.BaseModel.get_button">
-<span class="sig-name descname"><span class="pre">get_button</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">button_index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Enum</span></span></span><a class="headerlink" href="#src.menu.base_model.BaseModel.get_button" title="Ссылка на это определение">#</a></dt>
+<p>Описание:
+Метод предназначени для открытия лутбокса из которого
+ользователь может получить случайный предмет.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="src.states.lootbox_state.model.Model">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.states.lootbox_state.model.</span></span><span class="sig-name descname"><span class="pre">Model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">User</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lootbox</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Lootbox</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.states.lootbox_state.model.Model" title="Ссылка на это определение">#</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="src.states.lootbox_state.model.Model.get_button">
+<span class="sig-name descname"><span class="pre">get_button</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">button_index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.states.lootbox_state.model.Model.get_button" title="Ссылка на это определение">#</a></dt>
 <dd><p>Возвращает кнопку по индексу</p>
 <dl class="field-list simple">
 <dt class="field-odd">Параметры<span class="colon">:</span></dt>
@@ -224,16 +247,6 @@
 </dd>
 </dl>
 <p>:return button enum</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="src.menu.base_model.BaseModel.get_show_args">
-<span class="sig-name descname"><span class="pre">get_show_args</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.menu.base_model.BaseModel.get_show_args" title="Ссылка на это определение">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Результат<span class="colon">:</span></dt>
-<dd class="field-odd"><p>аргументы для функции show</p>
-</dd>
-</dl>
 </dd></dl>
 
 </dd></dl>
@@ -245,23 +258,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="view.html">
+          <a class="next-page" href="mini_game.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Визуализация</div>
+                <div class="title">Основа мини-игр</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="controller.html">
+          <a class="prev-page" href="barracks.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Контроллер</div>
+                <div class="title">Реализация барраков</div>
                 
               </div>
             </a>
@@ -295,10 +308,14 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Модель</a><ul>
-<li><a class="reference internal" href="#src.menu.base_model.BaseModel"><code class="docutils literal notranslate"><span class="pre">BaseModel</span></code></a><ul>
-<li><a class="reference internal" href="#src.menu.base_model.BaseModel.get_button"><code class="docutils literal notranslate"><span class="pre">BaseModel.get_button()</span></code></a></li>
-<li><a class="reference internal" href="#src.menu.base_model.BaseModel.get_show_args"><code class="docutils literal notranslate"><span class="pre">BaseModel.get_show_args()</span></code></a></li>
+<li><a class="reference internal" href="#">Реализация лутбокса</a><ul>
+<li><a class="reference internal" href="#src.states.lootbox_state.controller.LootboxController"><code class="docutils literal notranslate"><span class="pre">LootboxController</span></code></a><ul>
+<li><a class="reference internal" href="#src.states.lootbox_state.controller.LootboxController.model_class"><code class="docutils literal notranslate"><span class="pre">LootboxController.model_class</span></code></a></li>
+<li><a class="reference internal" href="#src.states.lootbox_state.controller.LootboxController.process_callback"><code class="docutils literal notranslate"><span class="pre">LootboxController.process_callback()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#src.states.lootbox_state.model.Model"><code class="docutils literal notranslate"><span class="pre">Model</span></code></a><ul>
+<li><a class="reference internal" href="#src.states.lootbox_state.model.Model.get_button"><code class="docutils literal notranslate"><span class="pre">Model.get_button()</span></code></a></li>
 </ul>
 </li>
 </ul>
